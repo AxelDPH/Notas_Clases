@@ -1,0 +1,66 @@
+/* Display 
+
+Nos sirve para controlar como se muestra un elemento dentro de nuestro ducumento.
+
+Esta propiedad es distinta de position por que Display se encarga de dfinir como se muestran u ocultan elementos (NO SE ELMININA EL CODIGO)
+
+      -none
+      -inline
+      -block
+      -inline-block
+
+*/
+
+/* Estilos generales*/
+
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos para mis articulos */
+
+#articuloUno{
+    margin: 20px;
+    padding: 20px;
+    background-color: gainsboro;
+    border: 1px solid black;
+}
+
+
+#articuloDos{
+    margin: 20px;
+    padding: 20px;
+    background-color: gainsboro;
+    border: 1px solid black;
+    display: none;
+}
+
+
+#articuloTres{
+    margin: 20px;
+    padding: 20px;
+    background-color: gainsboro;
+    border: 1px solid black;
+}
+
+
+/* 
+none
+ Hace que el elemento se oculte completamente, y no ocupe espacios en la pagina (no se elimina), y este valor se utiliza comunmente para ocultar elementos debido a la interaccion con la ventana del navegador (un meno que se oculte cuando la ventana se haga pequeña)
+
+
+ inline 
+ Es el valor por defecto, hace que el elemento se muestre en linea con el texto que lo rodea
+*/
+
+li{
+    display: inline;
+    margin: 30px;
+    border: 5px solid blue;
+}
+
+/* block
+
+
+*/
