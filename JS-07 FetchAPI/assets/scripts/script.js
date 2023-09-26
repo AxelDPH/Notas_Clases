@@ -144,77 +144,114 @@ Ventajas de utilizar APIs
       */
 
 
-         //asigno el fetch a un avariable...
-         const conexion = fetch("https://fakestoreapi.com/products/1");
-
-         //imprimola variable (para ver el objeto completo)
-         console.log("Este es el objeto promesa", conexion);
-
-         //referencia a mi fetch para poder usar sus metodos
-         conexion
-
-         //usar el etodo then para manejar la respuesta 
-         .then(function(resultado){
+        //Asigno el fetch a una variable
+        const conexion = fetch("https://fakestoreapi.com/products/1");
+        //Imprimo la variable (para ver el objeto completo)
+        console.log("Este es mi objeto promesa: ", conexion);
+        //Referencia a mi fetch para poder usar sus métodos
+        conexion
+        .then(  //usar el método then para manejar la respuesta (lo relleno con la respuesta)
+        function(resultado) {
             console.log("Dentro de esta funcion que maneja la respuesta, encontraras: ", resultado);
-            return resultado.json();
-         }) 
-
-         //uso el metodo then para manejar el producto (lo relleno con la info del producto )
-         .then(function(producto){
-            console.log("Informacion de producto: ", producto);
-
-         })
-
-         //uso el metodo catch para manejar el error (lo relleno con un error para que la caja no regrese vacia)
-         .catch(function(error){
+            return resultado.json();    //.json() solo vive dentro de las promesas
+          }
+         )
+         .then(  //uso el método then para manejar el producto (lo relleno con info del producto)
+        function(producto) {
+            console.log("Información del producto: ", producto);
+        }
+    )
+        .catch( //uso el método catch para manejar el error (lo relleno con un error para que la caja no regrese vacía)
+        function(error) {
             console.log("Error", error);
-         })
+        }
+    )
 
 
-         let respuestaServidor = "Felipe de Jesus Maqueda Gonzalez, 31, 2, 1"; //texto plano
+let respuestaServidor =  "Felipe de Jesus Maqueda Gonzalez, 31, 2, 1"; //texto plano
 
-         //producto como respuesta de un servidor en formato plano (texto)
-let productoServidor = {"id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}}
-
+//producto como respuesta de un servidor en formato plano (texto)
+let productoServidor = {
+    "id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}
+}
 
 //producto como objeto JSON
 let productoJSON = {
-    id:17,
-    title:"Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-    price:39.99,
-    description:"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-    category:"women's clothing",
-    image:"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-    rating:{
-        rate:3.8,
-        count:679
-    }}
+    id:17,
+    title:"Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    price:39.99,
+    description:"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+    category:"women's clothing",
+    image:"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+    rating:{
+        rate:3.8,
+        count:679
+    }
+}
 
-//Revisar informacion de un objeto con texto plano
+//Revisar información de un objeto con texto plano
 console.log(productoServidor.price);
 
-//Revisar informacion de un objeto tipo JSON
+//Revisar información de un objeto tipo JSON
 console.log(productoJSON.price);
 
-//ObjetoJSON que voy a mandar a un servidor
+//
+
+
+//Objeto JSON que voy a mandar a un servidor
 let paciente = {
     nombre: "Felipe",
-    edad: 31, 
-    estatus: "Registro"
-
+    edad: 31,
+    estatus: "Registrado"
 }
 console.log(paciente);
 
-//Necesito convertirlo a una cadena de txto para que el servidos lo lea 
-let pacienteStringifeado = JSON.stringify(paciente);
-console.log(pacienteStringifeado);
+//Necesito convertirlo a una cadena de texto para que el servidor lo lea
+let pacienteStringify = JSON.stringify(paciente);
+//Mandamos al servidor
+console.log(pacienteStringify);
+
+//Recibimos del servidor
+let pacienteServidor = '{"nombre":"Felipe","edad":31,"estatus":"Registrado"}';
+//Necesito convertirlo a un objeto JSON
+let pacienteParseado = JSON.parse(pacienteServidor);
+console.log(pacienteParseado);
+
+//Si mando un JSON al servidor, tengo que convertirlo con "stringify"
+//Si recibo un string del servidor, tengo que convertirlo con "parse"
 
 
-let pacienteServidor = '{"nombre": "Felipe", "edad":31, "estatus": "Registrado"}';
 
-let pacienteJSON = JSON.parse(pacienteServidor);
-console.log(pacienteJSON);
+//Metodo POST para enviar un nuevo producto a nuestra BD de la FakeStoreAPI
 
-// si mando un JSON al servidor, lo stringifeo
-//Si recibo un string del servidor, lo parseo 
+fetch('https://fakestoreapi.com/products',{  //endpoint
+            method:"POST",   //especificar el tipo de metodo
+            body:JSON.stringify(    //instrucciones para serializar el cuerpo de mi solicitud (para la interpretacion del servidor)
+                {
+                    title: 'Sopa Maruchan Habanero',
+                    price: 15.5,
+                    description: 'Deliciosa sopa maruchan',
+                    image: 'https://media.justo.mx/products/041789001956.jpg',
+                    category: 'Sopas Instantaneas'
+                }
+            )
+        })
+            .then(res=>res.json())   //metodo para la respuesta (saber que mi producto llego con bien al servidor)
+            .then(json=>console.log(json)) //impresion en consola para revisar la info
 
+
+           /* fetch('https://fakestoreapi.com/products',{ //endpoint
+            method:"PUT", //especificar el tipo de metodo
+            body:JSON.stringify( //instruccion para serializar el cuerpo de mi solicitud (para la interpretacion del servidor)
+                {
+                    id: 1,
+                    title: inputTitulo.value,
+                    price: inputPrecio.value,
+                    description: inputDescripcion.value,
+                    image: inputImagen.value,
+                    category: inputCategoria.value
+                }
+            )
+        })
+            .then(res=>res.json()) //metodo para la respuesta (saber que mi producto llego con bien al servidor)
+            .then(json=>console.log(json))//impresion en consola para revisar la info */
