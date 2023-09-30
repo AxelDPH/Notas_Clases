@@ -1,0 +1,56 @@
+package controlDeFlujo;
+
+public class EstructurasDeControl {  //debe coincidir la clase con el nombre de nuestro documento
+	public static void main(String[] args) {// Todo dentro del metodo main
+		
+// Recordar que para que algo se ejecute, siempre debe ir dentro del metodo principal.
+		
+		
+		
+		//primero vamos a definir una variable del tipo string donde alamcene un dato 
+		String citaProgramada = "28-09-23"; //Dejamos el Null y despues lo cambiamos a una fecha "28-09-23"
+		//la variable declarada, se inicia en null a proposito para tener un espacio de memoria ya asiganado y solo remplazarlo con  un nuevo dato.
+		
+		if (citaProgramada != null) {
+			System.out.println("Ya hay una cita Programada");//Por que la variable ya esta ocupada o llena 
+		}else{
+			System.out.println("Puede registrar su cita.");
+		}
+		
+		////////////////////////////////////
+		
+		//Seleccionando una opcion y almacenado la variable opcion 
+		
+		
+		int opcion = 1 ;
+		//Creamos un menu
+		System.out.println("Menu del diente feliz");
+		System.out.println("1. ¿Desea programar una cita? ");
+		System.out.println("2. Verificar Cita Programada");
+		System.out.println("3. Cancelar cita ");
+		System.out.println("4. Salir del menu");
+		System.out.print("Seleccione un opcion del menu (1-4) ");
+		
+		
+		switch (opcion) {
+		case 1:
+			System.out.println("Usted ha seleccionado la opcion programar cita. "); //Agrega la logica para programar una cita 
+			break;
+		case 2: System.out.println("Usted ha seleccioando verificar cita");
+		    break;
+		case 3: System.out.println("Usted ha seleccionado la opcion de cancelar cita :( ");
+		    break;
+		case 4:System.out.println("Usted ha seleccionado la opcion salir del menu");
+		    break;
+		   default:
+		      System.out.println("La opcion que ustede selecciono no es valida. Po r favor seleccione una opcion de nuestro menu");
+		      break;
+		
+		}
+		
+		
+		
+		
+	}//fin de metodo
+
+}//fin de clase 

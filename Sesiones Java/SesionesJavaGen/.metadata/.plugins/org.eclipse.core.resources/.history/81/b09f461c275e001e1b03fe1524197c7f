@@ -1,0 +1,36 @@
+package controlDeFlujo;
+
+public class EstructurasDeControl {  //debe coincidir la clase con el nombre de nuestro documento
+	public static void main(String[] args) {// Todo dentro del metodo main
+		
+// Recordar que para que algo se ejecute, siempre debe ir dentro del metodo principal.
+		
+		
+		
+		//primero vamos a definir una variable del tipo string donde alamcene un dato 
+		String citaProgramada = "28-09-23"; //Dejamos el Null y despues lo cambiamos a una fecha "28-09-23"
+		//la variable declarada, se inicia en null a proposito para tener un espacio de memoria ya asiganado y solo remplazarlo con  un nuevo dato.
+		
+		if (citaProgramada != null) {
+			System.out.println("Ya hay una cita Programada");//Por que la variable ya esta ocupada o llena 
+		}else {
+			System.out.println("Puede registrar su cita.");
+		}
+		
+		////////////////////////////////////
+		
+		//Seleccionando una opcion y almacenado la variable opcion 
+		
+		
+		int opcion = 1 ;
+		//Creamos un menu
+		System.out.println("Menu del diente feliz");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.print();
+		
+		
+	}//fin de metodo
+
+}//fin de clase 

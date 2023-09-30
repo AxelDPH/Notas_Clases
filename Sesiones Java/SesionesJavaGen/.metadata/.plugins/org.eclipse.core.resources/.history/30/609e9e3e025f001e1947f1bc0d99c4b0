@@ -1,0 +1,18 @@
+package loops;
+
+public class ForLoop {
+   public static void main (String[] args) {
+	   /*
+	    *El ciclo for proporciona una forma compacta de iterar sobre valores.
+	    *for (inicializacion; condicion; (incremento/decremento){  
+	    //bloque de codigo
+	    })  
+	    */
+	   
+	   //for variable local 
+	   for (int numero = 1; numero <= 10; numero++) {
+		   System.out.println("Numero igual a " + numero);
+	   }
+	   
+   }//final metodo main
+}//final class

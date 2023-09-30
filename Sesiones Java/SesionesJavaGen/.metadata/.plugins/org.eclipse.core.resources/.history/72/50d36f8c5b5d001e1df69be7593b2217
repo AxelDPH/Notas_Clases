@@ -1,0 +1,18 @@
+package logicOperators;
+
+public class OperadoresLogicos {
+    public static void main (String[] args) {
+    	/*
+    	 --Operadores aritmeticos (+, -, *, /, %)
+    	 --Operadores logicos.
+    	 --Operadores relacionales (=, +=, -=, *=, /=, <, >, <=, >=)
+    	 
+    	 */
+    	
+    	int num1 = 12;
+    	int num2 = 7;
+    	
+    	int resultado = num1 - num2;
+    	System.out.println(resultado);
+    }
+}
